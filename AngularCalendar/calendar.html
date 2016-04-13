@@ -2,12 +2,22 @@
 <html ng-app="cal_app">
 	<head>
 		<title>Calendar App</title>
+		<style>
+			[ng\:cloak], [ng-cloak], .ng-cloak{
+				display: none;
+			}
+		</style>
 	</head>
-
-	<body>
-    	<h1>Calendar App</h1>
-        <div ng-controller="cal_controller">
-        	
-        </div>
-	</body>
+	<wrapper>
+		<body>
+			<h1>Calendar App</h1>
+			<div ng-controller = "cal_controller">
+				The Current Date is: {{curr_date}}
+			</div>
+			<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+		</body>
+		<footer>
+			This is my footer
+		</footer>
+	</wrapper>
 </html>
