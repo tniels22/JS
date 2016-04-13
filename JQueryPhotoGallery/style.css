@@ -1,0 +1,127 @@
+.wrapper{
+  background-color: #000000;
+  width:90%;
+  min-width: 770;
+}
+/*MENU*/
+.nav{
+  background-color: #0474BF;
+  width:100%;
+  min-width: 770px;
+  height: 50px;
+}
+#main_nav ul{
+  list-style-type: none;
+}
+#main_nav ul li{
+  background-color:  #0474BF;
+  position:relative;
+  display: inline-block;
+  width: 100px;
+  height: 100%;
+  font-size: 16pt;
+  line-height: 50px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+#main_nav ul li:hover{
+  background-color:  #FFFFFF;
+  cursor: pointer;
+  background: rgba(255, 255, 255 ,0.25) ;
+  opacity: 90%;
+}
+.dropbttn{
+  border: none;
+  width: 100px;
+  height: 100%;
+}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px  rgba(0,0,0,0.2);
+  }
+.dropdown-content a {
+  color:  black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover{
+  background-color: #f1f1f1;
+}
+.show{
+  display:block;
+}
+/*BODY*/
+body{
+  font-family: 'Lato', sans-serif;
+}
+.photoGallery{
+  width: 50%;
+  min-width: 300px;
+  position: relative;
+  display:block;
+}
+.largePhotoStream{
+  width: 90%;
+  height: 90%;
+  max-width: 600px;
+  max-height: 475px;
+  position: relative;
+}
+.thumbnailStream{
+  max-height: 75px;
+  width: 100%;
+  clear: both;
+}
+.largePhotoStream div img{
+  display: none;
+  max-width: 600px;
+  max-height: 600px;
+}
+.thumbnailStream div img{
+  position: relative;
+  display: inline-block;
+}
+.thumbnailStream div img:hover{
+  background-color:  #FFFFFF;
+  cursor: pointer;
+  opacity: .5 ;
+}
+.clicked{
+}
+.propertyInfo{
+  width:50%;
+  min-width: 385px;
+  display: block;
+  position: relative;
+  float: right;
+}
+#sliderNav{
+  height: 75px;
+  width: 410px;
+  background-color:  #0474BF;
+  position: relative;
+  padding-top: 10px;
+  clear: both;
+  margin-left: 14%;
+}
+#sliderNav div{
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  background-color:  #0474BF;
+  position: inherit;
+  display: inline-block;
+  box-shadow: 0px 8px 16px 0px  rgba(0,0,0,0.2);
+}
+#sliderNav div:hover{
+  width: 100px;
+  height: 100%;
+  background-color:  #0474BF;
+  cursor: pointer;
+  background: rgba(255, 255, 255 ,0.25) ;
+}

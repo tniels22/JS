@@ -1,0 +1,85 @@
+<html>
+<header>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+  <script type="text/javascript" src="js/piclist.js"></script>
+  <link rel="stylesheet" href="style.css" media="screen" type="text/css"/>
+</header>
+  <wrapper>
+    <div class="nav">
+      <div id="logo">
+      </div>
+      <div id="main_nav">
+         <ul>
+           <li class="dropdown" onhover="myFunction">Bed<a href=javascript:void(0) class="dropbttn" ></a>
+             <div id="myDropdown" class="dropdown-content" >
+               <a href="#">1+</a>
+               <a href="#">2+</a>
+               <a href="#">3+</a>
+               <a href="#">4+</a>
+               <a href="#">5+</a>
+               <a href="#">6+</a>
+             </div>
+           </li>
+            <li class="dropdown">Bathroom<a href=javascript:void(0) class="dropbttn" onclick="myFunction"></a>
+              <div class="dropdown-content"id="myDropdown">
+                <a href="#">1+</a>
+                <a href="#">2+</a>
+                <a href="#">3+</a>
+                <a href="#">4+</a>
+                <a href="#">5+</a>
+                <a href="#">6+</a>
+              </div>
+            </li>
+           <li class="dropdown">Sqft<a href=javascript:void(0) class="dropbttn" onclick="myFunction"></a>
+             <div class="dropdown-content"id="myDropdown">
+               <a href="#">1000+</a>
+               <a href="#">1500+</a>
+               <a href="#">2000+</a>
+               <a href="#">2500+</a>
+               <a href="#">3000+</a>
+               <a href="#">3500+</a>
+             </div>
+           </li>
+          <li class="dropdown">City's<a href=javascript:void(0) class="dropbttn" onclick="myFunction"></a>
+            <div class="dropdown-content"id="myDropdown">
+              <a href="#">Bloomington</a>
+              <a href="#">Ivins</a>
+              <a href="#">Saint George</a>
+              <a href="#">Veyo</a>
+              <a href="#">Hurricane</a>
+              <a href="#">La Verkin</a>
+            </div>
+          </li>
+          <li>Price Min</li>
+          <li>Price Max</li>
+          <li>HOA</li>
+     </ul>
+</div>
+    </div>
+    <body>
+
+    <h1>Search for Property</h1>
+    <div class='propertyId'></div>
+      <p>The Left Side<p>
+    <div class ='photoGallery'>
+      <div class = 'largePhotoStream'></div>
+      <div id='sliderNav'>
+        <div id='bttn1'>Category 1</div>
+        <div id='bttn2'>Category 2</div>
+        <div id='bttn3'>Category 3</div>
+        <div id='bttn4'>Category 4</div>
+    </div>
+      <div class='thumbnailStream'>
+        <script type="text/javascript" src="js/photoAlbum.js"></script>
+      </div>
+      <div id='description'></div>
+    </div>
+    <div class ='propertyInfo'>
+      <p>The Right Side</p>
+    </div>
+    </body>
+    <footer>Footer</footer>
+  </wrapper>
+</html>
