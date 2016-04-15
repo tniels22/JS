@@ -8,23 +8,26 @@
     <header>
       <h1>Nielson Calendar App</h1>
     </header>
-    <body>
+    <body ng-controller="SetVariables as ctrl">
       <div id="TitleBar">
         <h1 id="Left"><</h1>
-        <h1 id="Title" ng-controller="ctrl1">{{Year}} {{CurrMonth}}</h1>
+        <h1 id="Title">{{ctrl.Year}} {{ctrl.NameOfMonth}}</h1>
         <h1 id="Right">></h1>
       </div>
+
       <div id="Calendar">
       </div>
+
       <ul>Saved Values
-      <li id="Date" ng-controller="ctrl1">Full Date: {{date}}</li>
-      <li id="Month" ng-controller="ctrl1">Current Month : {{Month}}</li>
-      <li id="WeekDay" ng-controller="ctrl1">Current Day of Week : {{WeekDay}}</li>
-      <li id="Year"  ng-controller="ctrl1">Current Year : {{Year}}</li>
-      <li id="DayOfMonth"  ng-controller="ctrl1">Current Day of Month : {{DayOfMonth}}</li>
-      <li id="CurrentMonth"  ng-controller="ctrl1">Current Month : {{CurrMonth}}</li>
-      <li ng-controller="goodCtrl">I'm feeling : {{good}}</li>
-    </ul>
+        <li id="Date" >Full Date: {{ctrl.date}}</li>
+        <li id="Month">Current Month : {{ctrl.Month}}</li>
+        <li id="NameOfMonth">Month Name : {{ctrl.NameOfMonth}}</li>
+        <li id="WeekDay">Current Day of Week : {{ctrl.WeekDay}}</li>
+        <li id="Year">Current Year : {{ctrl.Year}}</li>
+        <li id="DayOfMonth">Current Day of Month : {{ctrl.DayOfMonth}}</li>
+        <li id="GetDaysInMonth">Current days in Month : {{ctrl.GetDaysInMonth}}</li>
+        <li ng-controller="goodCtrl">I'm feeling : {{good}}</li>
+      </ul>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
       <script src="js/calendar.js"></script>

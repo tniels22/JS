@@ -1,18 +1,30 @@
 var testapp = angular.module('testapp', []);
 
-testapp.controller('ctrl1', function($scope){
-  $scope.months=["January", "February", "March", "April", "May", "June", "July", "August", "July", "September", "October", "November", "December" ];
-  $scope.weekdays=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-  $scope.date = new Date;
-  $scope.Month = $scope.date.getMonth();
-  $scope.WeekDay = $scope.date.getDay();
-  $scope.Year = $scope.date.getFullYear();
-  $scope.DayOfMonth = $scope.date.getDate();
-  $scope.CurrMonth = $scope.months[$scope.Month];
+testapp.controller('SetVariables', function(){
+  //initialized / construction
+  var months=["January", "February", "March", "April", "May", "June", "July", "August", "July", "September", "October", "November", "December" ];
+  var DaysInMonth=[31, 28, 31, 30, 31, 31, 30, 31, 30, 31]
+  var self = this;
+  self.date = new Date;
+  self.Month = self.date.getMonth();
+  self.WeekDay = self.date.getDay();
+  self.Year = self.date.getFullYear();
+  self.DayOfMonth = self.date.getDate();
+  // create functions
+  self.NameOfMonth = months[self.Month];
+  self.GetDaysInMonth = DaysInMonth[self.Month];
+  self.GetDaysInPrevMonth = DaysInMonth[self.Month-1];
+  self.GetDaysInNextMonth = DaysInMonth[self.Month+1];
 });
-
-testapp.controller('goodCtrl', function($scope) {
+/*
+testapp.controller('createCalendar', function(){
+  self.GetDaysInMonth.foreach{
+    angular.element(document.querySelector('#Calendar'));
+  };
+});
+*/
+//Use Table
+testapp.controller('goodCtrl', function(self) {
   var goodFeelings = ["Ready", "Awesome","Inner Peace"];
-  $scope.good = goodFeelings[Math.floor((Math.random() * 3))];
-
+  self.good = goodFeelings[Math.floor((Math.random() * 3))];
 });
