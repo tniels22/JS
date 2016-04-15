@@ -1,5 +1,12 @@
-var cal_app = angular.module('cal_app', []);
+var testapp = angular.module('testapp', []);
 
-cal_app.controller('cal_controller', function($scope){
-	$scope.curr_date = date.getFullYear();
+testapp.controller('ctrl1', function($scope){
+  $scope.date = new Date;
+  $scope.Month = $scope.date.getMonth();
+  $scope.Day = $scope.date.getDay();
+});
+
+testapp.controller('badCtrl', function($scope) {
+  var badFeelings = ["Disregarded", "Unimportant","Rejected","Powerless"];
+  $scope.bad = badFeelings[Math.floor((Math.random() * 4))];
 });
