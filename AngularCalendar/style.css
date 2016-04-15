@@ -1,4 +1,3 @@
-
 html{
   font-family: sans-serif;
 }
@@ -11,5 +10,33 @@ footer{
   color: #FFFFFF;
   background-color: #006069;
   padding: 20px 50px;
+  text-align: center;
+}
+#TitleBar{
+}
+#Title{
+  background-color: #FFFFF;
+  padding: 20px;
+  text-align: center;
+  color: #007783;
+}
+#Left{
+  float: left;
+}
+#Right{
+  float: right;
+  text-align: right;
+}
+#Calendar{
+  margin-left: 18%;
+}
+#day{
+
+}
+span{
+  position: relative;
+  width:100px;
+  height: 50px;
+  background-color: #006069;
   text-align: center;
 }

@@ -9,10 +9,22 @@
       <h1>Nielson Calendar App</h1>
     </header>
     <body>
-      <div id="Month" ng-controller="ctrl1">Full Date: {{date}}</div>
-      <h4 ng-controller="ctrl1">Current Month : {{Month}}</h4>
-      <h4 ng-controller="ctrl1">Current Day : {{Day}}</h4>
-      <h4 ng-controller="goodCtrl">I'm feeling : {{good}}</h4>
+      <div id="TitleBar">
+        <h1 id="Left"><</h1>
+        <h1 id="Title" ng-controller="ctrl1">{{Year}} {{CurrMonth}}</h1>
+        <h1 id="Right">></h1>
+      </div>
+      <div id="Calendar">
+      </div>
+      <ul>Saved Values
+      <li id="Date" ng-controller="ctrl1">Full Date: {{date}}</li>
+      <li id="Month" ng-controller="ctrl1">Current Month : {{Month}}</li>
+      <li id="WeekDay" ng-controller="ctrl1">Current Day of Week : {{WeekDay}}</li>
+      <li id="Year"  ng-controller="ctrl1">Current Year : {{Year}}</li>
+      <li id="DayOfMonth"  ng-controller="ctrl1">Current Day of Month : {{DayOfMonth}}</li>
+      <li id="CurrentMonth"  ng-controller="ctrl1">Current Month : {{CurrMonth}}</li>
+      <li ng-controller="goodCtrl">I'm feeling : {{good}}</li>
+    </ul>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
       <script src="js/calendar.js"></script>
