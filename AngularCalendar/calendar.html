@@ -15,10 +15,17 @@
         <h1 id="Right">></h1>
       </div>
 
-      <div ng-repeat = "month in ctrl.months">
-          <span class="month" ng-bind="month"></span>
+      <b>Curly Brace Method</b>
+      <p>The problem was I didn't realize MONTH wasn't a referance / key word already in place. It was in fact a keyword I was creating in the moment I called ng-repeat</p>
+      <div ng-repeat = "MONTH in ctrl.months">
+          <span class="month">{{MONTH.month}}</span>
       </div>
-          
+
+      <b>ng-bind METHOD</b>
+      <div ng-repeat = "MONTH in ctrl.months">
+          <span class="month" ng-bind="MONTH.month"></span>
+      </div>
+
       <ul>Saved Values
         <li id="Date" >Full Date: {{ctrl.date}}</li>
         <li id="Month">Current Month : {{ctrl.Month}} <span>Name of Month : {{ctrl.NameOfMonth}}</span></li>
