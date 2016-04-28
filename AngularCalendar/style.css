@@ -16,23 +16,39 @@ footer{
   padding: 20px 50px;
   text-align: center;
 }
+td{
+
+}
+.weekday{
+  color:  #007783;
+  font-weight: bold;
+  width: 14.2%;
+}
+.day{
+  width: 14.2%;
+  height: 100px;
+  border-width: medium;
+  border-color: #007783;
+  border-style: solid;
+  vertical-align: text-top;
+}
 #TitleBar{
+    background-color: #FFFFF;
+    text-align: center;
+    color: #007783;
+    vertical-align: middle;
 }
 #Title{
-  background-color: #FFFFF;
-  padding: 20px;
-  text-align: center;
-  color: #007783;
+  display:inline-block;
 }
 #Left{
   float: left;
 }
 #Right{
   float: right;
-  text-align: right;
 }
 #Calendar{
-  margin-left: 18%;
+  margin-left: 10%;
 }
 #day{
 

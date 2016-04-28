@@ -40,12 +40,18 @@ testapp.controller('SetVariables', [function(){
   self.DaysInMonth = [];
   self.WeeksInMonth = 4;
   self.SetWeeksInMonth = function(){
-    currentWeekDay = self.WeekDay;
-    currentDayOfMonth = self.DayOfMonth;
-    //find WeekDay of 1st Day of Month
+    var currentWeekDay = self.WeekDay;
+    var currentDayOfMonth = self.DayOfMonth;
+    for (i =  currentDayOfMonth; i != 1; i--){
+      if (currentWeekDay >= 1) {
+        currentWeekDay--;
+      } else{
+        currentWeekDay = 6;
+      }
+    }
     //Store for reference later to autofill blank days & set to not-clickable
     var weeks = 0;
-    var firstWeekDay = 0;
+    var firstWeekDay = currentWeekDay ;
     if (firstWeekDay != 0){
       weeks++;
     }
@@ -58,14 +64,17 @@ testapp.controller('SetVariables', [function(){
   }
 
   //returns arrray with each day of Month
-  self.SetDaysInMonth = function(){
+  self.getDaysInMonth = function(){
     var a=[];
     for(var i=0; i < self.DaysInMonth[self.Month]; i++) {
       i++;
-      self.DaysInMonth.push(i);
+      a.push(i);
     }
+    return a;
   }
+
 }]);
+
 testapp.controller('goodCtrl', function(self) {
   var goodFeelings = ["Ready", "Awesome","Inner Peace"];
   self.good = goodFeelings[Math.floor((Math.random() * 3))];

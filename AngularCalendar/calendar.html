@@ -15,23 +15,20 @@
         <h1 id="Right">></h1>
       </div>
 
-      <div >
-        <table>
-          <tr ng-repeat = "DAY in ctrl.weekdays">
-            <td class="month">{{DAY.day}}</td>
-            <td>Column 2</td>
-            <td>Column 3</td>
-            <td>Column 4</td>
-            <td>Column 5</td>
-            <td>Column 6</td>
-            <td>Column 7</td>
+      <div id="Calendar">
+        <table style="width: 90%; padding: 5%;">
+          <tr>
+            <td class="weekday" ng-repeat = "DAY in ctrl.weekdays">{{DAY.day}}</td>
+          </tr>
+          <tr ng-repeat = "WEEK in [0, 1, 2, 3]">
+            <td class="day" ng-repeat = "DAY in ctrl.weekdays">{{DAY.day}}</td>
           </tr>
         </table>
       </div>
 
-      <b>ng-bind METHOD</b>
-      <div ng-repeat = "MONTH in ctrl.months">
-          <span class="month" ng-bind="MONTH.month"></span>
+
+      <div ng-repeat = "NOTE in ctrl.months">
+          <span class="NOTE" ng-bind="NOTE.month"></span>
       </div>
 
       <ul>Saved Values
@@ -41,8 +38,10 @@
         <li id="WeekDay">Name of Week Day : {{ctrl.weekdays[ctrl.WeekDay].day}}</li>
         <li id="WeekDay">Current Day of Month : {{ctrl.DayOfMonth}}</li>
         <li id="Year">Current Year : {{ctrl.Year}}</li>
-        <li id="NumOfDaysInMonth"> Days in Current Month : {{ctrl.NumOfDaysInMonth}}</li>
-        <li id="DaysInMonth">Current days in Month : {{ctrl.DaysInMonth}}</li>
+        <li id="NumOfDaysInMonth"> # of Days in Month : {{ctrl.NumOfDaysInMonth}}</li>
+        <li id="DaysInMonth">Days in Month : {{ctrl.DaysInMonth}}</li>
+        <li id="getDaysInMonth">All days in Month : {{ctrl.getDaysInMonth}}</li>
+        <li id="SetWeeksInMonth">Weeks in Month : {{ctrl.SetWeeksInMonth}}</li>
       </ul>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
