@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="testapp">
+<html ng-app="app">
   <head>
     <title>Nielson Calendar App</title>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -16,17 +16,17 @@
       </div>
 
       <div id="Calendar">
+          <div style="width:100px; height 20px;" ng-repeat="month in ctrl.months"></div>
+              <span class="month" ng-bind="ctrl.months.month">Hello</span>
       </div>
 
       <ul>Saved Values
         <li id="Date" >Full Date: {{ctrl.date}}</li>
-        <li id="Month">Current Month : {{ctrl.Month}}</li>
-        <li id="NameOfMonth">Month Name : {{ctrl.NameOfMonth}}</li>
+        <li id="Month">Current Month : {{ctrl.Month}} <span>Name of Month : {{ctrl.NameOfMonth}}</span></li>
         <li id="WeekDay">Current Day of Week : {{ctrl.WeekDay}}</li>
         <li id="Year">Current Year : {{ctrl.Year}}</li>
-        <li id="DayOfMonth">Current Day of Month : {{ctrl.DayOfMonth}}</li>
-        <li id="GetDaysInMonth">Current days in Month : {{ctrl.GetDaysInMonth}}</li>
-        <li ng-controller="goodCtrl">I'm feeling : {{good}}</li>
+        <li id="NumOfDaysInMonth"> Days in Current Month : {{ctrl.NumOfDaysInMonth}}</li>
+        <li id="DaysInMonth">Current days in Month : {{ctrl.DaysInMonth}}</li>
       </ul>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
