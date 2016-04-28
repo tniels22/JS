@@ -8,18 +8,17 @@
     <header>
       <h1>Nielson Calendar App</h1>
     </header>
-    <body ng-controller="SetVariables as ctrl">
+    <body ng-controller = "SetVariables as ctrl">
       <div id="TitleBar">
         <h1 id="Left"><</h1>
         <h1 id="Title">{{ctrl.Year}} {{ctrl.NameOfMonth}}</h1>
         <h1 id="Right">></h1>
       </div>
 
-      <div id="Calendar">
-          <div style="width:100px; height 20px;" ng-repeat="month in ctrl.months"></div>
-              <span class="month" ng-bind="ctrl.months.month">Hello</span>
+      <div ng-repeat = "month in ctrl.months">
+          <span class="month" ng-bind="month"></span>
       </div>
-
+          
       <ul>Saved Values
         <li id="Date" >Full Date: {{ctrl.date}}</li>
         <li id="Month">Current Month : {{ctrl.Month}} <span>Name of Month : {{ctrl.NameOfMonth}}</span></li>
