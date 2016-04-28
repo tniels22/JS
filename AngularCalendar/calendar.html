@@ -15,10 +15,18 @@
         <h1 id="Right">></h1>
       </div>
 
-      <b>Curly Brace Method</b>
-      <p>The problem was I didn't realize MONTH wasn't a referance / key word already in place. It was in fact a keyword I was creating in the moment I called ng-repeat</p>
-      <div ng-repeat = "MONTH in ctrl.months">
-          <span class="month">{{MONTH.month}}</span>
+      <div >
+        <table>
+          <tr ng-repeat = "DAY in ctrl.weekdays">
+            <td class="month">{{DAY.day}}</td>
+            <td>Column 2</td>
+            <td>Column 3</td>
+            <td>Column 4</td>
+            <td>Column 5</td>
+            <td>Column 6</td>
+            <td>Column 7</td>
+          </tr>
+        </table>
       </div>
 
       <b>ng-bind METHOD</b>
@@ -30,6 +38,8 @@
         <li id="Date" >Full Date: {{ctrl.date}}</li>
         <li id="Month">Current Month : {{ctrl.Month}} <span>Name of Month : {{ctrl.NameOfMonth}}</span></li>
         <li id="WeekDay">Current Day of Week : {{ctrl.WeekDay}}</li>
+        <li id="WeekDay">Name of Week Day : {{ctrl.weekdays[ctrl.WeekDay].day}}</li>
+        <li id="WeekDay">Current Day of Month : {{ctrl.DayOfMonth}}</li>
         <li id="Year">Current Year : {{ctrl.Year}}</li>
         <li id="NumOfDaysInMonth"> Days in Current Month : {{ctrl.NumOfDaysInMonth}}</li>
         <li id="DaysInMonth">Current days in Month : {{ctrl.DaysInMonth}}</li>

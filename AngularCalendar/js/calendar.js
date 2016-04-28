@@ -38,6 +38,25 @@ testapp.controller('SetVariables', [function(){
   self.NameOfMonth = self.months[self.Month].month;
   self.NumOfDaysInMonth = self.months[self.Month].days;
   self.DaysInMonth = [];
+  self.WeeksInMonth = 4;
+  self.SetWeeksInMonth = function(){
+    currentWeekDay = self.WeekDay;
+    currentDayOfMonth = self.DayOfMonth;
+    //find WeekDay of 1st Day of Month
+    //Store for reference later to autofill blank days & set to not-clickable
+    var weeks = 0;
+    var firstWeekDay = 0;
+    if (firstWeekDay != 0){
+      weeks++;
+    }
+    for(i = 0; i < NumOfDaysInMonth; i++) {
+      if (WeekDay == 0) {
+        weeks++;
+      }
+    }
+    return weeks;
+  }
+
   //returns arrray with each day of Month
   self.SetDaysInMonth = function(){
     var a=[];

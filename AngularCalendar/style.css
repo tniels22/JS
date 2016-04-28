@@ -1,10 +1,14 @@
 html{
   font-family: sans-serif;
 }
+#wrapper{
+}
 header{
   color: #FFFFFF;
   background-color: #006069;
   padding: 20px 50px;
+}
+body{
 }
 footer{
   color: #FFFFFF;
