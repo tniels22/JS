@@ -15,20 +15,23 @@
         <h1 id="Right">></h1>
       </div>
 
-      <div id="Calendar">
+      <div id = "Calendar">
         <table style="width: 90%; padding: 5%;">
           <tr>
             <td class="weekday" ng-repeat = "DAY in ctrl.weekdays">{{DAY.day}}</td>
           </tr>
-          <tr ng-repeat = "WEEK in [0, 1, 2, 3]">
-            <td class="day" ng-repeat = "DAY in ctrl.weekdays">{{DAY.day}}</td>
+          <tr ng-repeat = "WEEK in [1,2,3,4,5]">
+            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week1}}</td>
+          <!--  <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week2}}</td>
+            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week3}}</td>
+            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week4}}</td>
+            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week5}}</td>-->
           </tr>
         </table>
       </div>
 
-
-      <div ng-repeat = "NOTE in ctrl.months">
-          <span class="NOTE" ng-bind="NOTE.month"></span>
+      <div ng-repeat = "Month in ctrl.months">
+          <span class="Month" ng-bind="Month.month"></span>
       </div>
 
       <ul>Saved Values
@@ -39,8 +42,8 @@
         <li id="WeekDay">Current Day of Month : {{ctrl.DayOfMonth}}</li>
         <li id="Year">Current Year : {{ctrl.Year}}</li>
         <li id="NumOfDaysInMonth"> # of Days in Month : {{ctrl.NumOfDaysInMonth}}</li>
-        <li id="DaysInMonth">Days in Month : {{ctrl.DaysInMonth}}</li>
-        <li id="getDaysInMonth">All days in Month : {{ctrl.getDaysInMonth}}</li>
+    <!--    <li id="DaysInMonth">Days in Month : {{ctrl.DaysInMonth}}</li>
+        <li id="getDaysInMonth">All days in Month : {{ctrl.getDaysInMonth}}</li>-->
         <li id="SetWeeksInMonth">Weeks in Month : {{ctrl.SetWeeksInMonth}}</li>
       </ul>
 

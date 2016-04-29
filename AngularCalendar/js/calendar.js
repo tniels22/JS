@@ -1,6 +1,6 @@
-var testapp = angular.module('app', []);
+var app = angular.module('app', []);
 
-testapp.controller('SetVariables', [function(){
+app.controller('SetVariables', [function(){
   //initialized / construction
   var self = this;
   self.months = [
@@ -38,50 +38,59 @@ testapp.controller('SetVariables', [function(){
   self.NameOfMonth = self.months[self.Month].month;
   self.NumOfDaysInMonth = self.months[self.Month].days;
   self.DaysInMonth = [];
-  self.WeeksInMonth = 4;
-  self.SetWeeksInMonth = function(){
-    var currentWeekDay = self.WeekDay;
-    var currentDayOfMonth = self.DayOfMonth;
-    for (i =  currentDayOfMonth; i != 1; i--){
-      if (currentWeekDay >= 1) {
-        currentWeekDay--;
-      } else{
-        currentWeekDay = 6;
+  self.WeeksInMonth= [
+    //Sunday
+    { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
+    //Monday
+    { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
+    //Tuesday
+    { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
+    //Wednesday
+    { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
+    //Thursday
+    { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
+    //Friday
+    { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
+    //Saturday
+    { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
+  ];
+
+    self.SetWeeksInMonth = function(){
+      var currentWeekDay = self.WeekDay;
+      var currentDayOfMonth = self.DayOfMonth;
+      console.log("Starting Day of Week: ", currentWeekDay, " Starting Day of Month: ", currentDayOfMonth);
+      for (i =  currentDayOfMonth; i != 1; i--){
+        if (currentWeekDay >= 1) {
+          currentWeekDay--;
+        } else{
+          currentWeekDay = 6;
+        }
       }
-    }
-    //Store for reference later to autofill blank days & set to not-clickable
-    var weeks = 0;
-    var firstWeekDay = currentWeekDay ;
-    if (firstWeekDay != 0){
-      weeks++;
-    }
-    for(i = 0; i < NumOfDaysInMonth; i++) {
-      if (WeekDay == 0) {
+      //Store for reference later to autofill blank days & set to not-clickable
+      var weeks = 0;
+      var firstWeekDay = currentWeekDay ;
+      console.log("Weekday of the first day of the month: ", firstWeekDay);
+      // To find out how many weeks are in the month... not sure if it will be used
+      if (firstWeekDay != 0){
         weeks++;
       }
+      for(i = 0; i < NumOfDaysInMonth; i++) {
+        if (WeekDay == 0) {
+          weeks++;
+        }
+      }
+      return weeks;
     }
-    return weeks;
-  }
-
-  //returns arrray with each day of Month
-  self.getDaysInMonth = function(){
-    var a=[];
-    for(var i=0; i < self.DaysInMonth[self.Month]; i++) {
-      i++;
-      a.push(i);
-    }
-    return a;
-  }
 
 }]);
 
-testapp.controller('goodCtrl', function(self) {
+app.controller('goodCtrl', function(self) {
   var goodFeelings = ["Ready", "Awesome","Inner Peace"];
   self.good = goodFeelings[Math.floor((Math.random() * 3))];
 });
 
 /* MY RANDOM NOTES
-testapp.controller('createCalendar', function(){
+app.controller('createCalendar', function(){
   self.GetDaysInMonth.foreach{
     angular.element(document.querySelector('#Calendar'));
   };
