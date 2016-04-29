@@ -55,32 +55,41 @@ app.controller('SetVariables', [function(){
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
   ];
 
-    self.SetWeeksInMonth = function(){
-      var currentWeekDay = self.WeekDay;
-      var currentDayOfMonth = self.DayOfMonth;
-      console.log("Starting Day of Week: ", currentWeekDay, " Starting Day of Month: ", currentDayOfMonth);
-      for (i =  currentDayOfMonth; i != 1; i--){
-        if (currentWeekDay >= 1) {
-          currentWeekDay--;
-        } else{
-          currentWeekDay = 6;
-        }
+  self.getDaysInMonth = function(){
+    var a=[];
+    for(var i=1; i <= self.NumOfDaysInMonth; i++) {
+      a.push(i);
+    }
+    return a;
+  };
+
+  //returns arrray with each day of Month
+  self.SetWeeksInMonth = function(){
+    var currentWeekDay = self.WeekDay;
+    var currentDayOfMonth = self.DayOfMonth;
+    console.log("Starting Day of Week: ", currentWeekDay, " Starting Day of Month: ", currentDayOfMonth);
+    for (i =  currentDayOfMonth; i != 1; i--){
+      if (currentWeekDay >= 1) {
+        currentWeekDay--;
+      } else{
+        currentWeekDay = 6;
       }
-      //Store for reference later to autofill blank days & set to not-clickable
-      var weeks = 0;
-      var firstWeekDay = currentWeekDay ;
-      console.log("Weekday of the first day of the month: ", firstWeekDay);
-      // To find out how many weeks are in the month... not sure if it will be used
-      if (firstWeekDay != 0){
+    }
+    //Store for reference later to autofill blank days & set to not-clickable
+    var weeks = 0;
+    var firstWeekDay = currentWeekDay ;
+    console.log("Weekday of the first day of the month: ", firstWeekDay);
+    // To find out how many weeks are in the month
+    if (firstWeekDay != 0){
+      weeks++;
+    }
+    for(i = 0; i < NumOfDaysInMonth; i++) {
+      if (WeekDay == 0) {
         weeks++;
       }
-      for(i = 0; i < NumOfDaysInMonth; i++) {
-        if (WeekDay == 0) {
-          weeks++;
-        }
-      }
-      return weeks;
     }
+    return weeks;
+  };
 
 }]);
 

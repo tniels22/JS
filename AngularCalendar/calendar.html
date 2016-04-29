@@ -20,12 +20,25 @@
           <tr>
             <td class="weekday" ng-repeat = "DAY in ctrl.weekdays">{{DAY.day}}</td>
           </tr>
-          <tr ng-repeat = "WEEK in [1,2,3,4,5]">
+          <!--<tr ng-repeat = "WEEK in [1,2,3,4,5]">
+            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{"Week.week"+WEEK}}</td>
+          <tr>-->
+          <tr >
             <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week1}}</td>
-          <!--  <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week2}}</td>
+          <tr>
+          <tr >
+            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week2}}</td>
+          <tr>
+          <tr >
             <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week3}}</td>
+          <tr>
+          <tr >
             <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week4}}</td>
-            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week5}}</td>-->
+          <tr>
+          <tr >
+            <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week5}}</td>
+          <tr>
+          <button ng-click="ctrl.SetWeeksInMonth()"></button>
           </tr>
         </table>
       </div>
@@ -42,9 +55,9 @@
         <li id="WeekDay">Current Day of Month : {{ctrl.DayOfMonth}}</li>
         <li id="Year">Current Year : {{ctrl.Year}}</li>
         <li id="NumOfDaysInMonth"> # of Days in Month : {{ctrl.NumOfDaysInMonth}}</li>
-    <!--    <li id="DaysInMonth">Days in Month : {{ctrl.DaysInMonth}}</li>
-        <li id="getDaysInMonth">All days in Month : {{ctrl.getDaysInMonth}}</li>-->
-        <li id="SetWeeksInMonth">Weeks in Month : {{ctrl.SetWeeksInMonth}}</li>
+        <li id="DaysInMonth">Days in Month : {{ctrl.DaysInMonth}}</li>
+        <li id="getDaysInMonth">Get all Days in Month : {{ctrl.getDaysInMonth()}}</li>
+    <!--    <li id="SetWeeksInMonth">Weeks in Month : {{ctrl.SetWeeksInMonth()}}</li>-->
       </ul>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
