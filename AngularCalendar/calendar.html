@@ -37,9 +37,6 @@
           <tr>
           <tr >
             <td ng-repeat = "Week in ctrl.WeeksInMonth" class="day">{{Week.week5}}</td>
-          <tr>
-          <button ng-click="ctrl.SetWeeksInMonth()"></button>
-          </tr>
         </table>
       </div>
 
@@ -49,15 +46,19 @@
 
       <ul>Saved Values
         <li id="Date" >Full Date: {{ctrl.date}}</li>
-        <li id="Month">Current Month : {{ctrl.Month}} <span>Name of Month : {{ctrl.NameOfMonth}}</span></li>
+        <li id="Month">Current Month : {{ctrl.Month}}, {{ctrl.NameOfMonth}}</li>
+        <li id="Month">Previous Month : {{ctrl.PreviousMonth()}}, {{ctrl.NameOfPreviousMonth}}</li>
         <li id="WeekDay">Current Day of Week : {{ctrl.WeekDay}}</li>
         <li id="WeekDay">Name of Week Day : {{ctrl.weekdays[ctrl.WeekDay].day}}</li>
         <li id="WeekDay">Current Day of Month : {{ctrl.DayOfMonth}}</li>
         <li id="Year">Current Year : {{ctrl.Year}}</li>
         <li id="NumOfDaysInMonth"> # of Days in Month : {{ctrl.NumOfDaysInMonth}}</li>
+        <li id="NumOfDaysInPreviousMonth"> # of Days in Previous Month : {{ctrl.NumOfDaysInPreviousMonth}}</li>
         <li id="DaysInMonth">Days in Month : {{ctrl.DaysInMonth}}</li>
         <li id="getDaysInMonth">Get all Days in Month : {{ctrl.getDaysInMonth()}}</li>
-    <!--    <li id="SetWeeksInMonth">Weeks in Month : {{ctrl.SetWeeksInMonth()}}</li>-->
+        <li id="FirstDayOfMonth">First Day in Month : {{ctrl.weekdays[ctrl.FirstDayOfMonth()].day}}</li>
+        <li id="SetWeeksInMonth">Setup Month : {{ctrl.SetWeeksInMonth()}}</li>
+        <!--<button ng-click="ctrl.SetWeeksInMonth()">Set Weeks In Month</button>-->
       </ul>
 
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>

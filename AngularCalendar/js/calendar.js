@@ -32,26 +32,27 @@ app.controller('SetVariables', [function(){
 
   // Use these in a service....
   self.Month = self.date.getMonth();
+  self.PreviousMonth = function() {
+    if (self.Month > 1){
+      return self.Month-1;
+    }
+    else return 12;
+  }
   self.WeekDay = self.date.getDay();
   self.Year = self.date.getFullYear();
   self.DayOfMonth = self.date.getDate();
   self.NameOfMonth = self.months[self.Month].month;
+  self.NameOfPreviousMonth = self.months[self.PreviousMonth()].month;
   self.NumOfDaysInMonth = self.months[self.Month].days;
+  self.NumOfDaysInPreviousMonth = self.months[self.PreviousMonth()].days;
   self.DaysInMonth = [];
   self.WeeksInMonth= [
-    //Sunday
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
-    //Monday
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
-    //Tuesday
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
-    //Wednesday
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
-    //Thursday
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
-    //Friday
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
-    //Saturday
     { week1: 0, week2: 0, week3: 0, week4: 0, week5: 0},
   ];
 
@@ -64,32 +65,66 @@ app.controller('SetVariables', [function(){
   };
 
   //returns arrray with each day of Month
-  self.SetWeeksInMonth = function(){
+  self.FirstDayOfMonth = function(){
     var currentWeekDay = self.WeekDay;
     var currentDayOfMonth = self.DayOfMonth;
-    console.log("Starting Day of Week: ", currentWeekDay, " Starting Day of Month: ", currentDayOfMonth);
-    for (i =  currentDayOfMonth; i != 1; i--){
+    for (var i =  currentDayOfMonth; i != 1; i--){
       if (currentWeekDay >= 1) {
         currentWeekDay--;
       } else{
         currentWeekDay = 6;
       }
     }
-    //Store for reference later to autofill blank days & set to not-clickable
-    var weeks = 0;
-    var firstWeekDay = currentWeekDay ;
-    console.log("Weekday of the first day of the month: ", firstWeekDay);
-    // To find out how many weeks are in the month
-    if (firstWeekDay != 0){
-      weeks++;
+    return currentWeekDay;
+  }
+
+  self.SetWeeksInMonth = function() {
+    var W = 1;
+    var other = "week"+W;
+    var currentDayOfWeek = self.FirstDayOfMonth();
+    var previousMonth = self.NumOfDaysInPreviousMonth;
+    //Set Previous Months Days
+    for (var i = self.FirstDayOfMonth()-1; i >= 0; i--) {
+      self.WeeksInMonth[i].week1= previousMonth;
+      previousMonth--;
     }
-    for(i = 0; i < NumOfDaysInMonth; i++) {
-      if (WeekDay == 0) {
-        weeks++;
+    //Set This Months Days
+    for (var i=1; i<=self.NumOfDaysInMonth; i++){
+      if (W == 1){
+          self.WeeksInMonth[currentDayOfWeek].week1=i;
+      }
+      else if (W == 2){
+          self.WeeksInMonth[currentDayOfWeek].week2=i;
+      }
+      else if (W == 3){
+          self.WeeksInMonth[currentDayOfWeek].week3=i;
+      }
+      else if (W == 4){
+          self.WeeksInMonth[currentDayOfWeek].week4=i;
+      }
+      else if (W == 5){
+          self.WeeksInMonth[currentDayOfWeek].week5=i;
+      }
+      if(currentDayOfWeek < 6){
+        currentDayOfWeek++;
+      } else{
+        currentDayOfWeek=0;
+        W++;
       }
     }
-    return weeks;
-  };
+    //Set Next Months Days
+    var nextMonthCurrDay=1;
+    while (currentDayOfWeek < 6){
+      self.WeeksInMonth[currentDayOfWeek].week5=nextMonthCurrDay;
+      nextMonthCurrDay++;
+      currentDayOfWeek++;
+    if (currentDayOfWeek == 6){
+      if (  self.WeeksInMonth[currentDayOfWeek].week5 == 0){
+      self.WeeksInMonth[currentDayOfWeek].week5=nextMonthCurrDay;
+        }
+      }
+    }
+  }
 
 }]);
 
