@@ -90,21 +90,7 @@ app.controller('SetVariables', [function(){
     }
     //Set This Months Days
     for (var i=1; i<=self.NumOfDaysInMonth; i++){
-      if (W == 1){
-          self.WeeksInMonth[currentDayOfWeek].week1=i;
-      }
-      else if (W == 2){
-          self.WeeksInMonth[currentDayOfWeek].week2=i;
-      }
-      else if (W == 3){
-          self.WeeksInMonth[currentDayOfWeek].week3=i;
-      }
-      else if (W == 4){
-          self.WeeksInMonth[currentDayOfWeek].week4=i;
-      }
-      else if (W == 5){
-          self.WeeksInMonth[currentDayOfWeek].week5=i;
-      }
+        self.WeeksInMonth[currentDayOfWeek]["week"+W]=i;
       if(currentDayOfWeek < 6){
         currentDayOfWeek++;
       } else{

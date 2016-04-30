@@ -32,6 +32,9 @@ td{
   border-style: solid;
   vertical-align: text-top;
 }
+.day:hover{
+  border-color: #00bcd0;
+}
 #TitleBar{
     background-color: #FFFFF;
     text-align: center;
