@@ -99,11 +99,13 @@ app.controller('SetVariables', [function(){
       }
     }
     //Set Next Months Days
-    var nextMonthCurrDay=1;
+    var nextMonthCurrDay = 1;
+    if (self.WeeksInMonth[currentDayOfWeek].week5 == 0){
     while (currentDayOfWeek < 6){
       self.WeeksInMonth[currentDayOfWeek].week5=nextMonthCurrDay;
       nextMonthCurrDay++;
       currentDayOfWeek++;
+    }
     if (currentDayOfWeek == 6){
       if (  self.WeeksInMonth[currentDayOfWeek].week5 == 0){
       self.WeeksInMonth[currentDayOfWeek].week5=nextMonthCurrDay;

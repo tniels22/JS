@@ -47,8 +47,14 @@ td{
 #Left{
   float: left;
 }
+#Left:hover{
+  color: #00bcd0;
+}
 #Right{
   float: right;
+}
+#Right:hover{
+  color: #00bcd0;
 }
 #Calendar{
   margin-left: 10%;
@@ -57,7 +63,7 @@ td{
 
 }
 .Month{
-  display: inline-block;
+  display:inline-block;
   width:100px;
   height: 50px;
   background-color: #006069;
